@@ -396,7 +396,7 @@ body {
     display: none;
   }
 }
-#contentMain .linkFilter:nth-child(5):before {
+#contentMain .linkFilter:nth-child(6):before {
   display: none !important;
 }
 #contentMain .linkFilter span {
@@ -481,15 +481,15 @@ body {
   text-align: left;
   padding: 32px;
 }
+#contentMain .filterSection .cardBack .cardContent p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 66px;
+}
 @media screen and (max-width: 375px) {
   #contentMain .filterSection .cardBack .cardContent {
     padding: 16px;
     border-left: 1px solid #e0cfbc;
-  }
-  #contentMain .filterSection .cardBack .cardContent p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 66px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -512,19 +512,41 @@ body {
   padding: 0;
   z-index: 2;
 }
-#contentMain a:focus[data-filter] {
-  opacity: 0.8;
-  outline: none;
+#contentMain a[data-filter]:focus ~ .filterSection .cardRoot .cardFront {
+  visibility: visible;
+  opacity: 1;
+}
+#contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover {
+  filter: drop-shadow(10px 10px 50px rgba(194, 175, 152, 0.3));
+}
+#contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover .cardBack {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+#contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover .cardBack .cardContent {
+  opacity: 1;
+  visibility: visible;
+}
+#contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover .cardFront {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+@media screen and (max-width: 375px) {
+  #contentMain a[data-filter]:focus ~ .filterSection .cardBack {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  #contentMain a[data-filter]:focus ~ .filterSection .cardBack .cardContent {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 #contentMain a[data-filter=europe]:focus ~ .filterSection div:not([data-filter=europe]),
 #contentMain a[data-filter=oceanie]:focus ~ .filterSection div:not([data-filter=oceanie]),
 #contentMain a[data-filter=asie]:focus ~ .filterSection div:not([data-filter=asie]),
 #contentMain a[data-filter=afrique]:focus ~ .filterSection div:not([data-filter=afrique]) {
-  width: 0;
-  height: 0;
-  padding: 0;
-  margin: 0;
   opacity: 0;
+  visibility: hidden;
 }
 
 #internContentMain {
@@ -722,6 +744,15 @@ body {
 footer {
   margin-top: 108px;
   background-color: #758f62;
+}
+footer.no-background {
+  background-color: transparent;
+}
+footer.no-background .divider {
+  background-color: #222222;
+}
+footer.no-background .footerSubNav span {
+  color: #222222;
 }
 footer .footerMainNav {
   display: flex;
