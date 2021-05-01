@@ -24,17 +24,17 @@
 
 @font-face {
   font-family: "MovementV";
-  src: url("../font/MovementV.ttf");
+  src: url("dist/font/MovementV.ttf");
 }
 @font-face {
   font-family: "Riposte";
   font-weight: 300;
-  src: url("../font/Riposte-Light.otf");
+  src: url("dist/font/Riposte-Light.otf");
 }
 @font-face {
   font-family: "Recoleta";
   font-weight: 300;
-  src: url("../font/Recoleta-Light.ttf");
+  src: url("dist/font/Recoleta-Light.ttf");
 }
 h1 {
   font-family: "Recoleta";
@@ -49,14 +49,21 @@ h1 {
     line-height: 33px;
   }
 }
+@media screen and (max-width: 1199px) {
+  h1 {
+    text-align: center;
+  }
+}
 
 h2 {
+  font-family: "Recoleta";
   line-height: 30px;
   font-size: 38px;
   font-weight: 400;
   line-height: 50px;
 }
 h2.card {
+  font-family: "MovementV";
   font-size: 690px;
   font-weight: 800;
   color: transparent;
@@ -415,6 +422,11 @@ body {
     margin-top: 54px;
   }
 }
+@media screen and (max-width: 1200px) {
+  #contentMain .filterSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 #contentMain .filterSection .cardRoot {
   margin-bottom: 40px;
   height: 440px;
@@ -513,6 +525,7 @@ body {
 #contentMain a[data-filter]:focus ~ .filterSection .cardRoot .cardFront {
   visibility: visible;
   opacity: 1;
+  display: flex;
 }
 #contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover {
   filter: drop-shadow(10px 10px 50px rgba(194, 175, 152, 0.3));
@@ -520,23 +533,32 @@ body {
 #contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover .cardBack {
   opacity: 1 !important;
   visibility: visible !important;
+  display: block;
 }
 #contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover .cardBack .cardContent {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 #contentMain a[data-filter]:focus ~ .filterSection .cardRoot:hover .cardFront {
   visibility: hidden !important;
   opacity: 0 !important;
+  display: flex;
 }
 @media screen and (max-width: 375px) {
+  #contentMain a[data-filter]:focus ~ .filterSection .cardFront {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
   #contentMain a[data-filter]:focus ~ .filterSection .cardBack {
     opacity: 1 !important;
     visibility: visible !important;
+    display: flex !important;
   }
   #contentMain a[data-filter]:focus ~ .filterSection .cardBack .cardContent {
     opacity: 1;
     visibility: visible;
+    display: block !important;
   }
 }
 #contentMain a[data-filter=europe]:focus ~ .filterSection div:not([data-filter=europe]),
@@ -545,13 +567,14 @@ body {
 #contentMain a[data-filter=afrique]:focus ~ .filterSection div:not([data-filter=afrique]) {
   opacity: 0;
   visibility: hidden;
+  display: none;
 }
 
 #internContentMain {
   position: relative;
 }
 #internContentMain:after {
-  content: url("../dist/img/leaves3.svg");
+  content: url("../img/leaves3.svg");
   position: absolute;
   bottom: 0;
   right: 0px;
@@ -611,7 +634,7 @@ body {
   }
 }
 #internContentMain .contentMain:before {
-  content: url("dist/img/wind_reverse.svg");
+  content: url("../img/wind_reverse.svg");
   position: absolute;
   top: -20px;
   left: -100px;
@@ -709,7 +732,7 @@ body {
   }
 }
 #internContentMain .contentMain .secondBlock .contentImage:before {
-  content: url("dist/img/wind3.svg");
+  content: url("../img/wind3.svg");
   position: absolute;
   bottom: -40%;
   left: 0px;
