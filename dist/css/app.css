@@ -1,0 +1,842 @@
+.text-main-color {
+  color: #222222 !important;
+}
+
+.border-main-color {
+  border-color: #222222 !important;
+}
+
+.text-secondary-color {
+  color: #595a6c !important;
+}
+
+.border-secondary-color {
+  border-color: #595a6c !important;
+}
+
+.text-background {
+  color: #fff8f0 !important;
+}
+
+.border-background {
+  border-color: #fff8f0 !important;
+}
+
+@font-face {
+  font-family: "MovementV";
+  src: url("dist/font/MovementV.ttf");
+}
+@font-face {
+  font-family: "Riposte";
+  font-weight: 300;
+  src: url("dist/font/Riposte-Light.otf");
+}
+@font-face {
+  font-family: "Recoleta";
+  font-weight: 300;
+  src: url("dist/font/Recoleta-Light.ttf");
+}
+h1 {
+  font-family: "Recoleta";
+  font-size: 54px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 76.16px;
+}
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 30px;
+    line-height: 33px;
+  }
+}
+
+h2 {
+  font-family: "Recoleta";
+  line-height: 30px;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 50px;
+}
+h2.card {
+  font-family: "MovementV";
+  font-size: 690px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px #e0cfbc;
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 18px;
+    line-height: 23.76px;
+  }
+}
+
+h3 {
+  font-family: "Recoleta";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 375px) {
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+p {
+  font-family: "Riposte";
+  font-size: 16px;
+  font-weight: 300;
+  color: #595a6c;
+  line-height: 21.6px;
+}
+
+a {
+  font-family: "Riposte";
+  font-size: 13px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 15.6px;
+  text-decoration: none;
+}
+
+span,
+.breadcrumb {
+  font-family: "Riposte";
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 16.8px;
+}
+span.light,
+.breadcrumb.light {
+  color: #cbb9a5;
+}
+
+.anchor {
+  margin-top: 72px;
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #222222;
+  color: #222222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+}
+.anchor::before, .anchor::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 375px) {
+  .anchor {
+    display: none;
+  }
+}
+
+.spin {
+  width: 120px;
+  height: 120px;
+  padding: 0;
+}
+.spin::before, .spin::after {
+  top: 0;
+  left: 0;
+}
+.spin::before {
+  border: 2px solid transparent;
+}
+.spin:hover::before {
+  border-top-color: #222222;
+  border-right-color: #222222;
+  border-bottom-color: #222222;
+  transition: border-top-color 0.15s ease, border-right-color 0.15s ease 0.1s, border-bottom-color 0.15s ease 0.2s;
+}
+.spin::after {
+  border: 0 solid transparent;
+}
+.spin:hover::after {
+  border-top: 2px solid #222222;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  transform: rotate(270deg);
+  transition: transform 0.4s ease 0s, border-left-width 0s ease 0.5s;
+}
+
+.circle {
+  border-radius: 100%;
+  box-shadow: none;
+}
+.circle::before, .circle::after {
+  border-radius: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 70px;
+  position: relative;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 375px) {
+  header {
+    position: relative;
+    padding: 28px 24px;
+    border-bottom: 1px solid #e0cfbc;
+  }
+  header .cursus {
+    display: none;
+  }
+  header br {
+    display: none;
+  }
+}
+header span {
+  z-index: 1;
+}
+@media screen and (max-width: 375px) {
+  header span {
+    color: #e0cfbc;
+  }
+}
+header:before {
+  content: url("/dist/img/leaves_left.png");
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 375px) {
+  header:before {
+    display: none;
+  }
+}
+header.intern:after {
+  content: url("/dist/img/leaves_right.png");
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 375px) {
+  header.intern:after {
+    top: -3px;
+    transform: scale(0.5);
+    right: 20%;
+    position: absolute;
+  }
+}
+header:after {
+  content: url("/dist/img/leaves_right.png");
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 375px) {
+  header:after {
+    top: -3px;
+    transform: scale(0.5);
+    right: -32%;
+    position: absolute;
+  }
+}
+header .school {
+  text-align: right;
+}
+header .breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.1em;
+}
+@media screen and (max-width: 375px) {
+  header .breadcrumb {
+    display: none;
+  }
+}
+header .breadcrumb .divider {
+  width: 48px;
+  height: 1px;
+  background-color: #222222;
+  margin: 0 8px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #fff8f0;
+  overflow-x: hidden;
+}
+
+#contentHeader,
+#internContentHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+  scroll-behavior: smooth;
+}
+@media screen and (max-width: 375px) {
+  #contentHeader,
+#internContentHeader {
+    padding: 80px 24px 24px 24px;
+    align-items: flex-start;
+    margin-bottom: 0px;
+  }
+}
+
+#internContentHeader {
+  margin-top: 130px;
+  position: relative;
+}
+@media screen and (max-width: 375px) {
+  #internContentHeader {
+    margin-top: 0px;
+    align-items: center;
+  }
+}
+#internContentHeader img {
+  height: 100%;
+}
+#internContentHeader h1 {
+  font-size: 126px;
+  font-weight: 300;
+  line-height: 126px;
+  z-index: 2;
+}
+@media screen and (max-width: 375px) {
+  #internContentHeader h1 {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 37.4px;
+  }
+}
+#internContentHeader .internContentDescription {
+  width: 100%;
+  z-index: 2;
+}
+#internContentHeader .internContentDescription p {
+  width: 301px;
+  text-align: left;
+  padding: 16px 180px;
+}
+@media screen and (max-width: 375px) {
+  #internContentHeader .internContentDescription p {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+}
+#internContentHeader img {
+  position: absolute;
+  top: -30%;
+  z-index: 1;
+}
+@media screen and (max-width: 375px) {
+  #internContentHeader img {
+    position: relative;
+    top: inherit;
+    width: 100%;
+  }
+}
+#internContentHeader:before {
+  content: url("/dist/img/wind.svg");
+  position: absolute;
+  top: 30px;
+  right: 153px;
+  z-index: -1;
+}
+@media screen and (max-width: 375px) {
+  #internContentHeader:before {
+    display: none;
+  }
+}
+
+#contentMain {
+  text-align: center;
+}
+#contentMain .linkFilter {
+  position: relative;
+  padding: 0 24px;
+}
+@media screen and (max-width: 375px) {
+  #contentMain .linkFilter {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #e0cfbc;
+    border-radius: 42px;
+    margin: 4px;
+  }
+}
+#contentMain .linkFilter:before {
+  content: "";
+  width: 2px;
+  height: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #222222;
+}
+@media screen and (max-width: 375px) {
+  #contentMain .linkFilter:before {
+    display: none;
+  }
+}
+#contentMain .linkFilter:nth-child(5):before {
+  display: none !important;
+}
+#contentMain .linkFilter span {
+  margin-right: 8px;
+}
+#contentMain .filterSection {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  margin-top: 100px;
+}
+@media screen and (max-width: 375px) {
+  #contentMain .filterSection {
+    grid-template-rows: repeat(1, 120px);
+    grid-template-columns: inherit;
+    row-gap: 20px;
+    margin-top: 54px;
+  }
+}
+#contentMain .filterSection .cardRoot {
+  margin-bottom: 40px;
+  height: 440px;
+  width: 300px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  background-color: #fff6ed;
+  border: 1px #e0cfbc solid;
+  border-radius: 12px;
+  position: relative;
+}
+@media screen and (max-width: 375px) {
+  #contentMain .filterSection .cardRoot {
+    height: 127px;
+    margin-bottom: 0;
+  }
+}
+#contentMain .filterSection .cardRoot:hover {
+  filter: drop-shadow(10px 10px 50px rgba(194, 175, 152, 0.3));
+}
+#contentMain .filterSection .cardRoot:hover .cardBack {
+  opacity: 1;
+  visibility: visible;
+}
+#contentMain .filterSection .cardRoot:hover .cardFront {
+  visibility: hidden;
+  opacity: 0;
+}
+#contentMain .filterSection .cardFront {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s linear;
+}
+@media screen and (max-width: 375px) {
+  #contentMain .filterSection .cardFront {
+    display: none;
+  }
+}
+#contentMain .filterSection .cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s linear;
+  width: 100%;
+  height: 100%;
+}
+#contentMain .filterSection .cardBack img {
+  width: 100%;
+}
+#contentMain .filterSection .cardBack .cardContent {
+  text-align: left;
+  padding: 32px;
+}
+@media screen and (max-width: 375px) {
+  #contentMain .filterSection .cardBack .cardContent {
+    padding: 16px;
+    border-left: 1px solid #e0cfbc;
+  }
+  #contentMain .filterSection .cardBack .cardContent p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 66px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #contentMain .filterSection .cardBack {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+  }
+  #contentMain .filterSection .cardBack .cardImage {
+    width: 134px;
+    height: 120px;
+  }
+}
+#contentMain .filterSection .linkToDetails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 2;
+}
+#contentMain a:focus[data-filter] {
+  opacity: 0.8;
+  outline: none;
+}
+#contentMain a[data-filter=europe]:focus ~ .filterSection div:not([data-filter=europe]),
+#contentMain a[data-filter=oceanie]:focus ~ .filterSection div:not([data-filter=oceanie]),
+#contentMain a[data-filter=asie]:focus ~ .filterSection div:not([data-filter=asie]),
+#contentMain a[data-filter=afrique]:focus ~ .filterSection div:not([data-filter=afrique]) {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+#internContentMain {
+  position: relative;
+}
+#internContentMain:after {
+  content: url("/dist/img/leaves3.svg");
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain:after {
+    bottom: 3%;
+    right: -30%;
+    transform: scale(0.7);
+  }
+}
+#internContentMain .contentTitle {
+  margin: 0 0 48px 180px;
+  padding-bottom: 32px;
+  position: relative;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentTitle {
+    margin: 0;
+  }
+}
+#internContentMain .contentTitle:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 704px;
+  height: 1px;
+  background-color: #222222;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentTitle:after {
+    display: none;
+  }
+}
+#internContentMain .contentTitle h2 {
+  width: 744px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentTitle h2 {
+    width: auto;
+    padding: 24px;
+  }
+}
+#internContentMain .contentMain {
+  margin-left: 180px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain {
+    margin-left: 0px;
+    padding: 24px;
+  }
+}
+#internContentMain .contentMain:before {
+  content: url("/dist/img/wind_reverse.svg");
+  position: absolute;
+  top: -20px;
+  left: -100px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain:before {
+    top: 10px;
+    left: inherit;
+    transform: scale(0.7);
+    z-index: 2;
+  }
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .firstBlock {
+    padding-bottom: 40px;
+  }
+}
+#internContentMain .contentMain .firstBlock .mainPicture {
+  padding-top: 56px;
+  position: relative;
+}
+#internContentMain .contentMain .firstBlock .mainPicture:before {
+  content: "";
+  position: absolute;
+  left: 111px;
+  top: 400px;
+  width: 1px;
+  height: 330px;
+  background-color: #222222;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .firstBlock .mainPicture:before {
+    display: none;
+  }
+}
+#internContentMain .contentMain .firstBlock .mainPicture img {
+  width: 412px;
+  height: 500px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .firstBlock .mainPicture img {
+    width: 100%;
+    height: auto;
+  }
+}
+#internContentMain .contentMain .firstBlock .mainDescription {
+  margin-top: 48px;
+  padding-left: 162px;
+  width: 301px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .firstBlock .mainDescription {
+    padding-left: 0;
+    display: none;
+  }
+}
+#internContentMain .contentMain .secondBlock {
+  margin-left: 56px;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .secondBlock {
+    margin: 0;
+  }
+}
+#internContentMain .contentMain .secondBlock .contentText {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .secondBlock .contentText {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#internContentMain .contentMain .secondBlock .contentText .firstColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#internContentMain .contentMain .secondBlock .contentText p {
+  width: 301px;
+  margin: 0 32px 16px 0;
+}
+#internContentMain .contentMain .secondBlock .contentImage {
+  margin: 64px 32px 0 0;
+  text-align: right;
+  position: relative;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .secondBlock .contentImage {
+    margin: 0;
+  }
+}
+#internContentMain .contentMain .secondBlock .contentImage:before {
+  content: url("/dist/img/wind3.svg");
+  position: absolute;
+  bottom: -40%;
+  left: 0px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .secondBlock .contentImage:before {
+    display: none;
+  }
+}
+#internContentMain .contentMain .secondBlock .contentImage img {
+  width: 532px;
+  height: 340px;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .secondBlock .contentImage img {
+    width: 100%;
+    height: auto;
+  }
+}
+#internContentMain .contentMain .secondBlock .mainDescription-mobile {
+  display: none;
+}
+@media screen and (max-width: 375px) {
+  #internContentMain .contentMain .secondBlock .mainDescription-mobile {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+footer {
+  margin-top: 108px;
+  background-color: #758f62;
+}
+footer .footerMainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 70px 40px 80px;
+  color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 375px) {
+  footer .footerMainNav {
+    padding: 40px 24px 24px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+footer .footerMainNav div {
+  margin-bottom: 8px;
+}
+footer .footerMainNav a {
+  position: relative;
+  font-family: "Recoleta";
+  font-weight: 400;
+  color: white;
+  font-size: 38px;
+  line-height: 38px;
+}
+@media screen and (max-width: 375px) {
+  footer .footerMainNav a {
+    font-size: 18px;
+    line-height: 24.48px;
+    margin-bottom: 24px;
+  }
+}
+footer .footerMainNav a.nextBird {
+  padding-right: 58px;
+}
+@media screen and (max-width: 375px) {
+  footer .footerMainNav a.nextBird {
+    padding: 0;
+  }
+}
+footer .footerMainNav a.nextBird:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 48px;
+  height: 1px;
+  transform: translateY(-50%);
+  transition: transform 0.5s linear;
+  background-color: white;
+}
+@media screen and (max-width: 375px) {
+  footer .footerMainNav a.nextBird:after {
+    display: none;
+  }
+}
+footer .footerMainNav a.nextBird:hover:after {
+  transition: transform 0.5s linear;
+  transform: translateY(-50%) translateX(10%);
+}
+footer .footerMainNav .contentRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 375px) {
+  footer .footerMainNav .contentRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+footer .footerMainNav .contentRight .before {
+  margin-right: 100px;
+}
+@media screen and (max-width: 375px) {
+  footer .footerMainNav .contentRight .before {
+    margin-right: 0px;
+  }
+}
+footer .divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 70px;
+}
+@media screen and (max-width: 375px) {
+  footer .divider {
+    margin: 0 24px;
+  }
+}
+footer .footerSubNav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 32px 70px 80px 70px;
+}
+@media screen and (max-width: 375px) {
+  footer .footerSubNav {
+    padding: 24px 0 40px 24px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+footer .footerSubNav span {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  padding: 0 28px;
+}
+@media screen and (max-width: 375px) {
+  footer .footerSubNav span {
+    padding: 0 16px 16px 0px;
+  }
+}
+footer .footerSubNav span:last-child {
+  padding-right: 0;
+}
+
+/*# sourceMappingURL=app.css.map */
