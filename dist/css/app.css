@@ -24,17 +24,17 @@
 
 @font-face {
   font-family: "MovementV";
-  src: url("dist/font/MovementV.ttf");
+  src: url("../font/MovementV.ttf");
 }
 @font-face {
   font-family: "Riposte";
   font-weight: 300;
-  src: url("dist/font/Riposte-Light.otf");
+  src: url("../font/Riposte-Light.otf");
 }
 @font-face {
   font-family: "Recoleta";
   font-weight: 300;
-  src: url("dist/font/Recoleta-Light.ttf");
+  src: url("../font/Recoleta-Light.ttf");
 }
 h1 {
   font-family: "Recoleta";
@@ -210,7 +210,7 @@ header span {
   }
 }
 header:before {
-  content: url("dist/img/leaves_left.png");
+  content: url("../img/leaves_left.png");
   position: fixed;
   top: 0;
   left: 0;
@@ -222,7 +222,7 @@ header:before {
   }
 }
 header.intern:after {
-  content: url("dist/img/leaves_right.png");
+  content: url("../img/leaves_right.png");
   position: fixed;
   top: 0;
   right: 0;
@@ -237,7 +237,7 @@ header.intern:after {
   }
 }
 header:after {
-  content: url("dist/img/leaves_right.png");
+  content: url("../img/leaves_right.png");
   position: fixed;
   top: 0;
   right: 0;
@@ -354,7 +354,7 @@ body {
   }
 }
 #internContentHeader:before {
-  content: url("dist/img/wind.svg");
+  content: url("../img/wind.svg");
   position: absolute;
   top: 30px;
   right: 153px;
@@ -553,7 +553,7 @@ body {
   position: relative;
 }
 #internContentMain:after {
-  content: url("dist/img/leaves3.svg");
+  content: url("../dist/img/leaves3.svg");
   position: absolute;
   bottom: 0;
   right: 0px;
