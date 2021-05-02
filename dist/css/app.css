@@ -215,11 +215,13 @@ header span {
     color: #e0cfbc;
   }
 }
-header a {
+header a,
+header .author {
   grid-area: a;
   justify-self: start;
 }
-header .categoryFilter {
+header .categoryFilter,
+header .school {
   grid-area: c;
   justify-self: end;
 }
@@ -386,7 +388,11 @@ body {
 #contentMain input[type=checkbox] {
   display: none;
 }
-#contentMain input[data-filter=afrique]:checked ~ label[data-filter=afrique] {
+#contentMain input[data-filter=afrique]:checked ~ label[data-filter=afrique],
+#contentMain input[data-filter=oceanie]:checked ~ label[data-filter=oceanie],
+#contentMain input[data-filter=amerique]:checked ~ label[data-filter=amerique],
+#contentMain input[data-filter=asie]:checked ~ label[data-filter=asie],
+#contentMain input[data-filter=europe]:checked ~ label[data-filter=europe] {
   color: black;
 }
 #contentMain .linkFilter {
