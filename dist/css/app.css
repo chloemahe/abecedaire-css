@@ -186,9 +186,10 @@ span.light,
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "a b c";
+  justify-items: center;
   padding: 50px 70px;
   position: relative;
   text-transform: uppercase;
@@ -213,6 +214,14 @@ header span {
   header span {
     color: #e0cfbc;
   }
+}
+header a {
+  grid-area: a;
+  justify-self: start;
+}
+header .categoryFilter {
+  grid-area: c;
+  justify-self: end;
 }
 header:before {
   content: url("../img/leaves_left.png");
@@ -377,10 +386,14 @@ body {
 #contentMain input[type=checkbox] {
   display: none;
 }
+#contentMain input[data-filter=afrique]:checked ~ label[data-filter=afrique] {
+  color: black;
+}
 #contentMain .linkFilter {
   font-family: "Riposte";
   position: relative;
   padding: 0 24px;
+  color: #cbb9a5;
 }
 @media screen and (max-width: 375px) {
   #contentMain .linkFilter {
@@ -398,14 +411,14 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  background-color: #222222;
+  background-color: #cbb9a5;
 }
 @media screen and (max-width: 375px) {
   #contentMain .linkFilter:before {
     display: none;
   }
 }
-#contentMain .linkFilter:nth-child(12):before {
+#contentMain .linkFilter:nth-child(10):before {
   display: none !important;
 }
 #contentMain .linkFilter span {
